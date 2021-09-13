@@ -4,10 +4,13 @@ const express = require('express')
 var axios = require('axios');
 
 const app = express()
+const cors = require("cors");
 const port = process.env.PORT || 3000
 const token = process.env.BEARER_TOKEN;
 
 const endpointURL = "https://api.twitter.com/1.1/statuses/show.json?id=";
+
+app.use(cors());
 
 app.get('/', (req, res) => {
   let config = {
