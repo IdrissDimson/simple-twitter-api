@@ -4,7 +4,7 @@ const express = require('express')
 var axios = require('axios');
 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 const token = process.env.BEARER_TOKEN;
 
 const endpointURL = "https://api.twitter.com/1.1/statuses/show.json?id=";
